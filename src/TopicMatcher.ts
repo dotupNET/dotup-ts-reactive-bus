@@ -27,7 +27,8 @@ export class TopicMatcher implements ITopicMatcher {
 
       if (currentFilter === '#') {
         return true;
-      } else if (currentFilter === '+') {
+      } else if (currentFilter === '+' && (t.length !== (i + 1))) {
+        continue;
         continue;
       } else if (currentTopic !== currentFilter) {
         return false;
