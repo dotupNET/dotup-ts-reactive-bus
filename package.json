@@ -1,4 +1,11 @@
 {
+  "version": "1.0.0",  
+  "name": "dotup-ts-reactive-bus",
+  "description": "Type save, observable message bus",
+  "author": {
+    "name": "Peter Ullrich",
+    "email": "dotup.software@gmail.com"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
@@ -39,10 +46,8 @@
     "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
     "npm-publish": "npm publish"
   },
-  "version": "0.0.0",
-  "name": "dotup-ts-reactive-bus",
-  "author": {
-    "name": "Peter Ullrich",
-    "email": "dotup.software@gmail.com"
+  "dependencies": {
+    "dotup-ts-logger": "0.0.13",
+    "rxjs": "^6.4.0"
   }
 }
