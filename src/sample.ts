@@ -1,7 +1,7 @@
 import { ConsoleLogWriter, LoggerFactory, LoggerManager } from 'dotup-ts-logger';
-import { ReactiveBus } from '../ReactiveBus';
-import { TopicMatcher } from '../TopicMatcher';
-import { Message1, Message2 } from './SampleMessages';
+import { ReactiveBus } from './ReactiveBus';
+import { TopicMatcher } from './TopicMatcher';
+import { Message1, Message2 } from './samples/SampleMessages';
 
 export class Startup {
 
