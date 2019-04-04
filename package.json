@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",  
+  "version": "1.0.1",
   "name": "dotup-ts-reactive-bus",
   "description": "Type save, observable message bus",
   "author": {
@@ -47,7 +47,7 @@
     "npm-publish": "npm publish"
   },
   "dependencies": {
-    "dotup-ts-logger": "0.0.13",
+    "dotup-ts-logger": "^0.1.0",
     "rxjs": "^6.4.0"
   }
 }
