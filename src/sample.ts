@@ -1,4 +1,3 @@
-import { ConsoleLogWriter, LoggerFactory, LoggerManager } from 'dotup-ts-logger';
 import { ReactiveBus } from './ReactiveBus';
 import { TopicMatcher } from './TopicMatcher';
 import { Message1, Message2 } from './samples/SampleMessages';
@@ -9,10 +8,6 @@ export class Startup {
 
   async testMessageBus() {
 
-    const f = LoggerFactory;
-    const m = new LoggerManager();
-
-    m.AttachLogWriter(new ConsoleLogWriter());
     this.bus = new ReactiveBus(new TopicMatcher('.'));
 
     this.bus.subscribe<string>('t1', x => {
