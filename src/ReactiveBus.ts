@@ -1,4 +1,3 @@
-import { ILogger, LoggerFactory } from 'dotup-ts-logger';
 import { Observable, Subject, Subscription } from 'rxjs';
 // tslint:disable-next-line: no-submodule-imports
 import { filter } from 'rxjs/operators';
@@ -6,16 +5,17 @@ import { BusMessage } from './BusMessage';
 import { IBusMessage } from './IBusMessage';
 import { IReactiveBus } from './IReactiveBus';
 import { ITopicMatcher } from './ITopicMatcher';
+import { getLogger } from 'log4js';
+
+const logger = getLogger('ReactiveBus');
 
 export class ReactiveBus implements IReactiveBus {
   // tslint:disable-next-line: no-any
   private readonly subjectBus: Subject<any>;
-  private readonly logger: ILogger;
   private readonly topicMatcher: ITopicMatcher;
 
   constructor(topicMatcher: ITopicMatcher) {
-    this.logger = LoggerFactory.createLogger('ReactiveBus');
-    this.logger.CallInfo('constructor');
+    logger.info('ReactiveBus created');
     // tslint:disable-next-line: no-any
     this.subjectBus = new Subject<any>();
     this.topicMatcher = topicMatcher;
