@@ -34,6 +34,9 @@ export class ReactiveBus implements IReactiveBus {
     } else {
       // Create bus message
       const top = topic === undefined ? message.constructor.name : topic;
+      if (top === undefined) {
+        throw new Error('Topic not set');
+      }
       msg = new BusMessage(top);
       msg.payload = message;
     }
