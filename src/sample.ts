@@ -1,6 +1,8 @@
 import { ReactiveBus } from './ReactiveBus';
 import { TopicMatcher } from './TopicMatcher';
 import { Message1, Message2 } from './samples/SampleMessages';
+import { debounce } from 'rxjs/operators';
+import { interval } from 'rxjs';
 
 export class Startup {
 
@@ -22,6 +24,9 @@ export class Startup {
     });
 
     this.bus.asObservable(Message2)
+      .pipe(
+        debounce(() => interval(1000))
+      )
       .subscribe(o => {
         console.log(`2: ${o.payload.value}`);
       });
